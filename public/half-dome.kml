@@ -1,0 +1,1090 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Half Dome.kml</name>
+	<Style id="pictureBalloonHighlight">
+		<IconStyle>
+			<scale>0.7</scale>
+			<Icon>
+				<href>http://www.everytrail.com/images/marker.gif</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table  border=0 cellpadding=0 cellspacing=0>
+                                 <tr>
+                                    <td>
+                                       <img src="https://storage.googleapis.com/mrpiercey/everytrail.gif">
+                                    </td>
+                                    <td align="right" valign="center">
+                                       <table border=0 cellspacing=0 cellpadding=3 >
+                                          <tr>
+                                             <td>
+                                                <a href="$[prevLink];balloonFlyto">
+                                                   $[prevImg]
+                                                </a>
+                                             </td>
+                                             <td valign=center><font size=+0><b>$[pic_num]</b> of $[total_pics]</font></td>
+                                             <td>
+                                                <a href="$[nextLink];balloonFlyto">
+                                                   $[nextImg]
+                                                </a>
+                                             </td>
+                                          </tr>
+                                       </table>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td colspan=2 valign="center">
+                                       <img src="$[image]" width="$[image_width]">
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td colspan=2>
+                                       <font color="#3198E0" size="+2"><b>$[name]</b></font>
+                                       <br>
+                                       by <a href="http://www.everytrail.com//profile.php?user_id=$[userId]">$[username]</a>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td colspan=2>
+                                       $[description]
+                                       <br>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                       <a href="http://www.everytrail.com/view_picture.php?picture_id=$[pictureId]">Comment</a> |
+                                       <a href="http://www.everytrail.com/view_picture.php?picture_id=$[pictureId]">Vote</a> |
+                                       <a href="http://www.everytrail.com/view_picture.php?picture_id=$[pictureId]">Inappropriate</a>
+                                    </td>
+                                    <td align=right>
+                                       <a href="http://www.everytrail.com">Upload your trips to EveryTrail</a>
+                                    </td>
+                                 </tr>
+                              </table>]]></text>
+		</BalloonStyle>
+	</Style>
+	<Style id="line">
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>4</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>660000ff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="tripFolder">
+		<ListStyle>
+			<ItemIcon>
+				<href>http://www.everytrail.com/images/everytrail_icon.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="tripBalloonHighlight">
+		<IconStyle>
+			<scale>0.7</scale>
+			<Icon>
+				<href>http://www.everytrail.com/images/everytrail_logo.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table width=400 border=0 cellpadding=0 cellspacing=0>
+                                 <tr>
+                                    <td>
+                                       <img src="http://www.everytrail.com/images/small_logo_text.gif">
+                                    </td>
+                                 </tr>
+                                 <tr>                              
+                                    <td>
+                                       <font color="#3198E0" size="+2"><b>$[name]</b></font> <a href="$[kmlLink];balloonFlyto"><img src="http://www.everytrail.com/images/next.png" border=0></a>
+                                       &nbsp;&nbsp;&nbsp; 
+                                       <a href="$[kmlLink];balloonFlyto">play trip</a>
+                                       <br>
+                                       by <a href="http://www.everytrail.com//profile.php?user_id=$[userId]">$[username]</a> on $[tripDate]<br>
+                                       <font color="#888888">$[location]</font>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                       <font size=+1>$[description]</font>
+                                       <center>
+                                          <table cellpadding=2 cellspacing=0>
+                                             <tr>
+                                                <td align=center valign=center>
+                                                   <a href="$[pic1Link]">
+                                                      $[pic1Src]
+                                                   </a>
+                                                </td>
+                                                <td align=center valign=center>
+                                                   <a href="$[pic2Link]">
+                                                      $[pic2Src]
+                                                   </a>
+                                                </td>
+                                                <td align=center valign=center>
+                                                   <a href="$[pic3Link]">
+                                                      $[pic3Src]
+                                                   </a>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td align=center valign=center>
+                                                   <a href="$[pic4Link]">
+                                                      $[pic4Src]
+                                                   </a>
+                                                </td>
+                                                <td align=center valign=center>
+                                                   <a href="$[pic5Link]">
+                                                      $[pic5Src]
+                                                   </a>
+                                                </td>
+                                                <td align=center valign=center>
+                                                   <a href="$[pic6Link]">
+                                                      $[pic6Src]
+                                                   </a>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </center>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                       $[activity]
+                                       $[length]
+               
+                                       <br>
+                                       <a href="http://www.everytrail.com">Upload your trips to EveryTrail</a>
+                                    </td>
+                                 </tr>
+                              </table>]]></text>
+		</BalloonStyle>
+	</Style>
+	<Style id="picturesFolder">
+		<ListStyle>
+			<ItemIcon>
+				<href>http://www.everytrail.com/images/photo.jpeg</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Folder>
+		<name>Half Dome</name>
+		<open>1</open>
+		<styleUrl>#tripFolder</styleUrl>
+		<Placemark id="trip85">
+			<name>Half Dome</name>
+			<Snippet maxLines="2">Hike up Mist trail, down Muir trail. Long day!</Snippet>
+			<description><![CDATA[Hike up Mist trail, down Muir trail. Long day!<br>]]></description>
+			<styleUrl>#tripBalloonHighlight</styleUrl>
+			<ExtendedData>
+				<Data name="username">
+					<value>ejobshop</value>
+				</Data>
+				<Data name="userId">
+					<value>39</value>
+				</Data>
+				<Data name="tripDate">
+					<value>Sep 09, 2006</value>
+				</Data>
+				<Data name="location">
+					<value><![CDATA[Curry Village, California, United States<br>]]></value>
+				</Data>
+				<Data name="kmlLink">
+					<value>#trip85_picture1</value>
+				</Data>
+				<Data name="activity">
+					<value><![CDATA[<b>Activity:</b> <br>]]></value>
+				</Data>
+				<Data name="tripId">
+					<value>85</value>
+				</Data>
+				<Data name="length">
+					<value><![CDATA[<b>Length:</b> 16.5 miles / 26 km<br>]]></value>
+				</Data>
+				<Data name="pic1Link">
+					<value>#trip85_picture1;balloonFlyto</value>
+				</Data>
+				<Data name="pic1Src">
+					<value><![CDATA[<img src="http://images.everytrail.com/pics/thumbnail/120-PICT2248.JPG" height=100>]]></value>
+				</Data>
+				<Data name="pic2Link">
+					<value>#trip85_picture2;balloonFlyto</value>
+				</Data>
+				<Data name="pic2Src">
+					<value><![CDATA[<img src="http://images.everytrail.com/pics/thumbnail/121-PICT2253.JPG" height=100>]]></value>
+				</Data>
+				<Data name="pic3Link">
+					<value>#trip85_picture3;balloonFlyto</value>
+				</Data>
+				<Data name="pic3Src">
+					<value><![CDATA[<img src="http://images.everytrail.com/pics/thumbnail/122-PICT2260.JPG" height=100>]]></value>
+				</Data>
+				<Data name="pic4Link">
+					<value>#trip85_picture4;balloonFlyto</value>
+				</Data>
+				<Data name="pic4Src">
+					<value><![CDATA[<img src="http://images.everytrail.com/pics/thumbnail/123-PICT2267.JPG" height=100>]]></value>
+				</Data>
+				<Data name="pic5Link">
+					<value>#trip85_picture5;balloonFlyto</value>
+				</Data>
+				<Data name="pic5Src">
+					<value><![CDATA[<img src="http://images.everytrail.com/pics/thumbnail/124-PICT2272.JPG" height=100>]]></value>
+				</Data>
+				<Data name="pic6Link">
+					<value>#trip85_picture6;balloonFlyto</value>
+				</Data>
+				<Data name="pic6Src">
+					<value><![CDATA[<img src="http://images.everytrail.com/pics/thumbnail/125-PICT2275.JPG" height=100>]]></value>
+				</Data>
+			</ExtendedData>
+			<Point>
+				<coordinates>-119.56674099,37.734797001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Folder>
+			<name>Pictures</name>
+			<styleUrl>#picturesFolder</styleUrl>
+			<Placemark id="trip85_picture1">
+				<name>Starting Out</name>
+				<description>At the parking lot near the trail head</description>
+				<LookAt>
+					<longitude>-119.5662</longitude>
+					<latitude>37.73505</latitude>
+					<altitude>0</altitude>
+					<heading>111.32336145525</heading>
+					<tilt>45</tilt>
+					<range>2000</range>
+					<altitudeMode>relativeToGround</altitudeMode>
+				</LookAt>
+				<styleUrl>#pictureBalloonHighlight</styleUrl>
+				<ExtendedData>
+					<Data name="image">
+						<value>http://images.everytrail.com/pics/fullsize/120-PICT2248.JPG</value>
+					</Data>
+					<Data name="image_width">
+						<value>400</value>
+					</Data>
+					<Data name="pictureId">
+						<value>120</value>
+					</Data>
+					<Data name="userId">
+						<value>39</value>
+					</Data>
+					<Data name="username">
+						<value>ejobshop</value>
+					</Data>
+					<Data name="location">
+						<value>37.7351, -119.5662</value>
+					</Data>
+					<Data name="prevLink">
+						<value>#trip85_picture0</value>
+					</Data>
+					<Data name="prevImg">
+					</Data>
+					<Data name="nextLink">
+						<value>#trip85_picture2</value>
+					</Data>
+					<Data name="nextImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/next.png" border=0>]]></value>
+					</Data>
+					<Data name="pic_num">
+						<value>1</value>
+					</Data>
+					<Data name="total_pics">
+						<value>15</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-119.5662,37.73505,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="trip85_picture2">
+				<name>Vernal Falls</name>
+				<LookAt>
+					<longitude>-119.544339179993</longitude>
+					<latitude>37.7265165524766</latitude>
+					<altitude>0</altitude>
+					<heading>50.998856910876</heading>
+					<tilt>45</tilt>
+					<range>2000</range>
+					<altitudeMode>relativeToGround</altitudeMode>
+				</LookAt>
+				<styleUrl>#pictureBalloonHighlight</styleUrl>
+				<ExtendedData>
+					<Data name="image">
+						<value>http://images.everytrail.com/pics/fullsize/121-PICT2253.JPG</value>
+					</Data>
+					<Data name="image_width">
+						<value>400</value>
+					</Data>
+					<Data name="pictureId">
+						<value>121</value>
+					</Data>
+					<Data name="userId">
+						<value>39</value>
+					</Data>
+					<Data name="username">
+						<value>ejobshop</value>
+					</Data>
+					<Data name="location">
+						<value>37.7265, -119.5443</value>
+					</Data>
+					<Data name="prevLink">
+						<value>#trip85_picture1</value>
+					</Data>
+					<Data name="prevImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/prev.png" border=0>]]></value>
+					</Data>
+					<Data name="nextLink">
+						<value>#trip85_picture3</value>
+					</Data>
+					<Data name="nextImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/next.png" border=0>]]></value>
+					</Data>
+					<Data name="pic_num">
+						<value>2</value>
+					</Data>
+					<Data name="total_pics">
+						<value>15</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-119.544339179993,37.7265165524766,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="trip85_picture3">
+				<name>Vernal Falls2</name>
+				<description>Looking straight down</description>
+				<LookAt>
+					<longitude>-119.54331</longitude>
+					<latitude>37.72735</latitude>
+					<altitude>0</altitude>
+					<heading>97.34971661732099</heading>
+					<tilt>45</tilt>
+					<range>2000</range>
+					<altitudeMode>relativeToGround</altitudeMode>
+				</LookAt>
+				<styleUrl>#pictureBalloonHighlight</styleUrl>
+				<ExtendedData>
+					<Data name="image">
+						<value>http://images.everytrail.com/pics/fullsize/122-PICT2260.JPG</value>
+					</Data>
+					<Data name="image_width">
+						<value>400</value>
+					</Data>
+					<Data name="pictureId">
+						<value>122</value>
+					</Data>
+					<Data name="userId">
+						<value>39</value>
+					</Data>
+					<Data name="username">
+						<value>ejobshop</value>
+					</Data>
+					<Data name="location">
+						<value>37.7274, -119.5433</value>
+					</Data>
+					<Data name="prevLink">
+						<value>#trip85_picture2</value>
+					</Data>
+					<Data name="prevImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/prev.png" border=0>]]></value>
+					</Data>
+					<Data name="nextLink">
+						<value>#trip85_picture4</value>
+					</Data>
+					<Data name="nextImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/next.png" border=0>]]></value>
+					</Data>
+					<Data name="pic_num">
+						<value>3</value>
+					</Data>
+					<Data name="total_pics">
+						<value>15</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-119.54331,37.72735,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="trip85_picture4">
+				<name>Nevada Falls</name>
+				<description>From the Mist Trail</description>
+				<LookAt>
+					<longitude>-119.533953666687</longitude>
+					<latitude>37.726143173245</latitude>
+					<altitude>0</altitude>
+					<heading>49.823244260633</heading>
+					<tilt>45</tilt>
+					<range>2000</range>
+					<altitudeMode>relativeToGround</altitudeMode>
+				</LookAt>
+				<styleUrl>#pictureBalloonHighlight</styleUrl>
+				<ExtendedData>
+					<Data name="image">
+						<value>http://images.everytrail.com/pics/fullsize/123-PICT2267.JPG</value>
+					</Data>
+					<Data name="image_width">
+						<value>400</value>
+					</Data>
+					<Data name="pictureId">
+						<value>123</value>
+					</Data>
+					<Data name="userId">
+						<value>39</value>
+					</Data>
+					<Data name="username">
+						<value>ejobshop</value>
+					</Data>
+					<Data name="location">
+						<value>37.7261, -119.534</value>
+					</Data>
+					<Data name="prevLink">
+						<value>#trip85_picture3</value>
+					</Data>
+					<Data name="prevImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/prev.png" border=0>]]></value>
+					</Data>
+					<Data name="nextLink">
+						<value>#trip85_picture5</value>
+					</Data>
+					<Data name="nextImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/next.png" border=0>]]></value>
+					</Data>
+					<Data name="pic_num">
+						<value>4</value>
+					</Data>
+					<Data name="total_pics">
+						<value>15</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-119.533953666687,37.726143173245,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="trip85_picture5">
+				<name>Rest Stop</name>
+				<description>Eric replacing calories</description>
+				<LookAt>
+					<longitude>-119.51232</longitude>
+					<latitude>37.74441</latitude>
+					<altitude>0</altitude>
+					<heading>-25.541684196306</heading>
+					<tilt>45</tilt>
+					<range>2000</range>
+					<altitudeMode>relativeToGround</altitudeMode>
+				</LookAt>
+				<styleUrl>#pictureBalloonHighlight</styleUrl>
+				<ExtendedData>
+					<Data name="image">
+						<value>http://images.everytrail.com/pics/fullsize/124-PICT2272.JPG</value>
+					</Data>
+					<Data name="image_width">
+						<value>400</value>
+					</Data>
+					<Data name="pictureId">
+						<value>124</value>
+					</Data>
+					<Data name="userId">
+						<value>39</value>
+					</Data>
+					<Data name="username">
+						<value>ejobshop</value>
+					</Data>
+					<Data name="location">
+						<value>37.7444, -119.5123</value>
+					</Data>
+					<Data name="prevLink">
+						<value>#trip85_picture4</value>
+					</Data>
+					<Data name="prevImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/prev.png" border=0>]]></value>
+					</Data>
+					<Data name="nextLink">
+						<value>#trip85_picture6</value>
+					</Data>
+					<Data name="nextImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/next.png" border=0>]]></value>
+					</Data>
+					<Data name="pic_num">
+						<value>5</value>
+					</Data>
+					<Data name="total_pics">
+						<value>15</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-119.51232,37.74441,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="trip85_picture6">
+				<name>Spring</name>
+				<description>Corey on a fallen redwood at the spring (used with iodine)</description>
+				<LookAt>
+					<longitude>-119.514416456223</longitude>
+					<latitude>37.7487970950498</latitude>
+					<altitude>0</altitude>
+					<heading>-69.143792305849</heading>
+					<tilt>45</tilt>
+					<range>2000</range>
+					<altitudeMode>relativeToGround</altitudeMode>
+				</LookAt>
+				<styleUrl>#pictureBalloonHighlight</styleUrl>
+				<ExtendedData>
+					<Data name="image">
+						<value>http://images.everytrail.com/pics/fullsize/125-PICT2275.JPG</value>
+					</Data>
+					<Data name="image_width">
+						<value>400</value>
+					</Data>
+					<Data name="pictureId">
+						<value>125</value>
+					</Data>
+					<Data name="userId">
+						<value>39</value>
+					</Data>
+					<Data name="username">
+						<value>ejobshop</value>
+					</Data>
+					<Data name="location">
+						<value>37.7488, -119.5144</value>
+					</Data>
+					<Data name="prevLink">
+						<value>#trip85_picture5</value>
+					</Data>
+					<Data name="prevImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/prev.png" border=0>]]></value>
+					</Data>
+					<Data name="nextLink">
+						<value>#trip85_picture7</value>
+					</Data>
+					<Data name="nextImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/next.png" border=0>]]></value>
+					</Data>
+					<Data name="pic_num">
+						<value>6</value>
+					</Data>
+					<Data name="total_pics">
+						<value>15</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-119.514416456223,37.7487970950498,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="trip85_picture7">
+				<name>View spot</name>
+				<description>Looking up the &quot;shoulder&quot;</description>
+				<LookAt>
+					<longitude>-119.522098302841</longitude>
+					<latitude>37.7517237814382</latitude>
+					<altitude>0</altitude>
+					<heading>-123.6657499724</heading>
+					<tilt>45</tilt>
+					<range>2000</range>
+					<altitudeMode>relativeToGround</altitudeMode>
+				</LookAt>
+				<styleUrl>#pictureBalloonHighlight</styleUrl>
+				<ExtendedData>
+					<Data name="image">
+						<value>http://images.everytrail.com/pics/fullsize/126-PICT2279.JPG</value>
+					</Data>
+					<Data name="image_width">
+						<value>400</value>
+					</Data>
+					<Data name="pictureId">
+						<value>126</value>
+					</Data>
+					<Data name="userId">
+						<value>39</value>
+					</Data>
+					<Data name="username">
+						<value>ejobshop</value>
+					</Data>
+					<Data name="location">
+						<value>37.7517, -119.5221</value>
+					</Data>
+					<Data name="prevLink">
+						<value>#trip85_picture6</value>
+					</Data>
+					<Data name="prevImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/prev.png" border=0>]]></value>
+					</Data>
+					<Data name="nextLink">
+						<value>#trip85_picture8</value>
+					</Data>
+					<Data name="nextImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/next.png" border=0>]]></value>
+					</Data>
+					<Data name="pic_num">
+						<value>7</value>
+					</Data>
+					<Data name="total_pics">
+						<value>15</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-119.522098302841,37.7517237814382,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="trip85_picture8">
+				<name>Cable crowd</name>
+				<description>At the base of the cables. Pile of gloves available.</description>
+				<LookAt>
+					<longitude>-119.529823064804</longitude>
+					<latitude>37.7465786744795</latitude>
+					<altitude>0</altitude>
+					<heading>-106.60161404147</heading>
+					<tilt>45</tilt>
+					<range>2000</range>
+					<altitudeMode>relativeToGround</altitudeMode>
+				</LookAt>
+				<styleUrl>#pictureBalloonHighlight</styleUrl>
+				<ExtendedData>
+					<Data name="image">
+						<value>http://images.everytrail.com/pics/fullsize/127-PICT2288.JPG</value>
+					</Data>
+					<Data name="image_width">
+						<value>400</value>
+					</Data>
+					<Data name="pictureId">
+						<value>127</value>
+					</Data>
+					<Data name="userId">
+						<value>39</value>
+					</Data>
+					<Data name="username">
+						<value>ejobshop</value>
+					</Data>
+					<Data name="location">
+						<value>37.7466, -119.5298</value>
+					</Data>
+					<Data name="prevLink">
+						<value>#trip85_picture7</value>
+					</Data>
+					<Data name="prevImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/prev.png" border=0>]]></value>
+					</Data>
+					<Data name="nextLink">
+						<value>#trip85_picture9</value>
+					</Data>
+					<Data name="nextImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/next.png" border=0>]]></value>
+					</Data>
+					<Data name="pic_num">
+						<value>8</value>
+					</Data>
+					<Data name="total_pics">
+						<value>15</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-119.529823064804,37.7465786744795,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="trip85_picture9">
+				<name>On the cables</name>
+				<description>Looking down at the crowd. Very steep.</description>
+				<LookAt>
+					<longitude>-119.531459212303</longitude>
+					<latitude>37.7460908675385</latitude>
+					<altitude>0</altitude>
+					<heading>-79.75506900622</heading>
+					<tilt>45</tilt>
+					<range>2000</range>
+					<altitudeMode>relativeToGround</altitudeMode>
+				</LookAt>
+				<styleUrl>#pictureBalloonHighlight</styleUrl>
+				<ExtendedData>
+					<Data name="image">
+						<value>http://images.everytrail.com/pics/fullsize/128-PICT2289.JPG</value>
+					</Data>
+					<Data name="image_width">
+						<value>400</value>
+					</Data>
+					<Data name="pictureId">
+						<value>128</value>
+					</Data>
+					<Data name="userId">
+						<value>39</value>
+					</Data>
+					<Data name="username">
+						<value>ejobshop</value>
+					</Data>
+					<Data name="location">
+						<value>37.7461, -119.5315</value>
+					</Data>
+					<Data name="prevLink">
+						<value>#trip85_picture8</value>
+					</Data>
+					<Data name="prevImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/prev.png" border=0>]]></value>
+					</Data>
+					<Data name="nextLink">
+						<value>#trip85_picture10</value>
+					</Data>
+					<Data name="nextImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/next.png" border=0>]]></value>
+					</Data>
+					<Data name="pic_num">
+						<value>9</value>
+					</Data>
+					<Data name="total_pics">
+						<value>15</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-119.531459212303,37.7460908675385,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="trip85_picture10">
+				<name>Diving Board</name>
+				<description>Nothing below you for several thousand feet</description>
+				<LookAt>
+					<longitude>-119.533712267876</longitude>
+					<latitude>37.746498080511</latitude>
+					<altitude>0</altitude>
+					<heading>61.065836519423</heading>
+					<tilt>45</tilt>
+					<range>2000</range>
+					<altitudeMode>relativeToGround</altitudeMode>
+				</LookAt>
+				<styleUrl>#pictureBalloonHighlight</styleUrl>
+				<ExtendedData>
+					<Data name="image">
+						<value>http://images.everytrail.com/pics/fullsize/129-PICT2297.JPG</value>
+					</Data>
+					<Data name="image_width">
+						<value>400</value>
+					</Data>
+					<Data name="pictureId">
+						<value>129</value>
+					</Data>
+					<Data name="userId">
+						<value>39</value>
+					</Data>
+					<Data name="username">
+						<value>ejobshop</value>
+					</Data>
+					<Data name="location">
+						<value>37.7465, -119.5337</value>
+					</Data>
+					<Data name="prevLink">
+						<value>#trip85_picture9</value>
+					</Data>
+					<Data name="prevImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/prev.png" border=0>]]></value>
+					</Data>
+					<Data name="nextLink">
+						<value>#trip85_picture11</value>
+					</Data>
+					<Data name="nextImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/next.png" border=0>]]></value>
+					</Data>
+					<Data name="pic_num">
+						<value>10</value>
+					</Data>
+					<Data name="total_pics">
+						<value>15</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-119.533712267876,37.746498080511,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="trip85_picture11">
+				<name>Overhang</name>
+				<description>See Eric? Below him to right is Corey&apos;s head...</description>
+				<LookAt>
+					<longitude>-119.533106088638</longitude>
+					<latitude>37.7468331811724</latitude>
+					<altitude>0</altitude>
+					<heading>97.68742578037001</heading>
+					<tilt>45</tilt>
+					<range>2000</range>
+					<altitudeMode>relativeToGround</altitudeMode>
+				</LookAt>
+				<styleUrl>#pictureBalloonHighlight</styleUrl>
+				<ExtendedData>
+					<Data name="image">
+						<value>http://images.everytrail.com/pics/fullsize/130-PICT2301.JPG</value>
+					</Data>
+					<Data name="image_width">
+						<value>400</value>
+					</Data>
+					<Data name="pictureId">
+						<value>130</value>
+					</Data>
+					<Data name="userId">
+						<value>39</value>
+					</Data>
+					<Data name="username">
+						<value>ejobshop</value>
+					</Data>
+					<Data name="location">
+						<value>37.7468, -119.5331</value>
+					</Data>
+					<Data name="prevLink">
+						<value>#trip85_picture10</value>
+					</Data>
+					<Data name="prevImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/prev.png" border=0>]]></value>
+					</Data>
+					<Data name="nextLink">
+						<value>#trip85_picture12</value>
+					</Data>
+					<Data name="nextImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/next.png" border=0>]]></value>
+					</Data>
+					<Data name="pic_num">
+						<value>11</value>
+					</Data>
+					<Data name="total_pics">
+						<value>15</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-119.533106088638,37.7468331811724,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="trip85_picture12">
+				<name>Cables</name>
+				<description>Coming down. No crowds now.</description>
+				<LookAt>
+					<longitude>-119.53086</longitude>
+					<latitude>37.74653</latitude>
+					<altitude>0</altitude>
+					<heading>-175.39868794489</heading>
+					<tilt>45</tilt>
+					<range>2000</range>
+					<altitudeMode>relativeToGround</altitudeMode>
+				</LookAt>
+				<styleUrl>#pictureBalloonHighlight</styleUrl>
+				<ExtendedData>
+					<Data name="image">
+						<value>http://images.everytrail.com/pics/fullsize/131-PICT2309.JPG</value>
+					</Data>
+					<Data name="image_width">
+						<value>400</value>
+					</Data>
+					<Data name="pictureId">
+						<value>131</value>
+					</Data>
+					<Data name="userId">
+						<value>39</value>
+					</Data>
+					<Data name="username">
+						<value>ejobshop</value>
+					</Data>
+					<Data name="location">
+						<value>37.7465, -119.5309</value>
+					</Data>
+					<Data name="prevLink">
+						<value>#trip85_picture11</value>
+					</Data>
+					<Data name="prevImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/prev.png" border=0>]]></value>
+					</Data>
+					<Data name="nextLink">
+						<value>#trip85_picture13</value>
+					</Data>
+					<Data name="nextImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/next.png" border=0>]]></value>
+					</Data>
+					<Data name="pic_num">
+						<value>12</value>
+					</Data>
+					<Data name="total_pics">
+						<value>15</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-119.53086,37.74653,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="trip85_picture13">
+				<name>Above Nevada Falls</name>
+				<description>Beautiful spot to cool off tired feet</description>
+				<LookAt>
+					<longitude>-119.532601833344</longitude>
+					<latitude>37.7248872474697</latitude>
+					<altitude>0</altitude>
+					<heading>-110.48105717907</heading>
+					<tilt>45</tilt>
+					<range>2000</range>
+					<altitudeMode>relativeToGround</altitudeMode>
+				</LookAt>
+				<styleUrl>#pictureBalloonHighlight</styleUrl>
+				<ExtendedData>
+					<Data name="image">
+						<value>http://images.everytrail.com/pics/fullsize/133-PICT2316.JPG</value>
+					</Data>
+					<Data name="image_width">
+						<value>400</value>
+					</Data>
+					<Data name="pictureId">
+						<value>133</value>
+					</Data>
+					<Data name="userId">
+						<value>39</value>
+					</Data>
+					<Data name="username">
+						<value>ejobshop</value>
+					</Data>
+					<Data name="location">
+						<value>37.7249, -119.5326</value>
+					</Data>
+					<Data name="prevLink">
+						<value>#trip85_picture12</value>
+					</Data>
+					<Data name="prevImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/prev.png" border=0>]]></value>
+					</Data>
+					<Data name="nextLink">
+						<value>#trip85_picture14</value>
+					</Data>
+					<Data name="nextImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/next.png" border=0>]]></value>
+					</Data>
+					<Data name="pic_num">
+						<value>13</value>
+					</Data>
+					<Data name="total_pics">
+						<value>15</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-119.532601833344,37.7248872474697,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="trip85_picture14">
+				<name>Nevada view</name>
+				<description>Half Dome in the background, Nevada Falls lower right</description>
+				<LookAt>
+					<longitude>-119.53985</longitude>
+					<latitude>37.72218</latitude>
+					<altitude>0</altitude>
+					<heading>-62.594739432714</heading>
+					<tilt>45</tilt>
+					<range>2000</range>
+					<altitudeMode>relativeToGround</altitudeMode>
+				</LookAt>
+				<styleUrl>#pictureBalloonHighlight</styleUrl>
+				<ExtendedData>
+					<Data name="image">
+						<value>http://images.everytrail.com/pics/fullsize/134-PICT2320.JPG</value>
+					</Data>
+					<Data name="image_width">
+						<value>400</value>
+					</Data>
+					<Data name="pictureId">
+						<value>134</value>
+					</Data>
+					<Data name="userId">
+						<value>39</value>
+					</Data>
+					<Data name="username">
+						<value>ejobshop</value>
+					</Data>
+					<Data name="location">
+						<value>37.7222, -119.5399</value>
+					</Data>
+					<Data name="prevLink">
+						<value>#trip85_picture13</value>
+					</Data>
+					<Data name="prevImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/prev.png" border=0>]]></value>
+					</Data>
+					<Data name="nextLink">
+						<value>#trip85_picture15</value>
+					</Data>
+					<Data name="nextImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/next.png" border=0>]]></value>
+					</Data>
+					<Data name="pic_num">
+						<value>14</value>
+					</Data>
+					<Data name="total_pics">
+						<value>15</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-119.53985,37.72218,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="trip85_picture15">
+				<name>Racing the sunset</name>
+				<description>Getting close! Very tired, but the Muir trail is nice on the way down. Made it to the car just before dark.</description>
+				<LookAt>
+					<longitude>-119.54521894455</longitude>
+					<latitude>37.7249636219426</latitude>
+					<altitude>0</altitude>
+					<heading>0</heading>
+					<tilt>45</tilt>
+					<range>2000</range>
+					<altitudeMode>relativeToGround</altitudeMode>
+				</LookAt>
+				<styleUrl>#pictureBalloonHighlight</styleUrl>
+				<ExtendedData>
+					<Data name="image">
+						<value>http://images.everytrail.com/pics/fullsize/135-PICT2322.JPG</value>
+					</Data>
+					<Data name="image_width">
+						<value>400</value>
+					</Data>
+					<Data name="pictureId">
+						<value>135</value>
+					</Data>
+					<Data name="userId">
+						<value>39</value>
+					</Data>
+					<Data name="username">
+						<value>ejobshop</value>
+					</Data>
+					<Data name="location">
+						<value>37.725, -119.5452</value>
+					</Data>
+					<Data name="prevLink">
+						<value>#trip85_picture14</value>
+					</Data>
+					<Data name="prevImg">
+						<value><![CDATA[<img src="http://www.everytrail.com/images/prev.png" border=0>]]></value>
+					</Data>
+					<Data name="nextLink">
+						<value>#trip85_picture16</value>
+					</Data>
+					<Data name="nextImg">
+					</Data>
+					<Data name="pic_num">
+						<value>15</value>
+					</Data>
+					<Data name="total_pics">
+						<value>15</value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>-119.54521894455,37.7249636219426,0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Tracks</name>
+			<Placemark id="trip85_track471">
+				<name>Half Dome</name>
+				<description>Length: 16.5</description>
+				<styleUrl>#line</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						-119.56674099,37.734797001,0 -119.566655159,37.734818459,0 -119.566204548,37.735054493,0 -119.561698437,37.733573914,0 -119.561076164,37.733273506,0 -119.56056118,37.732543945,0 -119.557921886,37.732543945,0 -119.558007717,37.729346752,0 -119.558780193,37.726836205,0 -119.553308487,37.726171017,0 -119.551720619,37.72632122,0 -119.551291466,37.725698948,0 -119.549446106,37.726256847,0 -119.547708035,37.726171017,0 -119.547171593,37.726557255,0 -119.546012878,37.726707458,0 -119.545819759,37.727007866,0 -119.544210434,37.726621628,0 -119.543287754,37.726728916,0 -119.543180466,37.726514339,0 -119.542086124,37.726771832,0 -119.542558193,37.727029324,0 -119.543330669,37.726943493,0 -119.54369545,37.727351189,0 -119.543309212,37.727351189,0 -119.543309212,37.727115154,0 -119.543266296,37.727372646,0 -119.542472363,37.727351189,0 -119.541699886,37.726492882,0 -119.540948868,37.726128101,0 -119.539897442,37.726707458,0 -119.539296627,37.726664543,0 -119.538352489,37.727565765,0 -119.534490108,37.727115154,0 -119.533996582,37.726171017,0 -119.532730579,37.726557255,0 -119.532237053,37.72632122,0 -119.531571865,37.726621628,0 -119.531657696,37.72623539,0 -119.530649185,37.726278305,0 -119.530456066,37.726385593,0 -119.530627728,37.726449966,0 -119.530649185,37.725849152,0 -119.530370235,37.726085186,0 -119.530434608,37.72660017,0 -119.530091286,37.72623539,0 -119.529275894,37.727394104,0 -119.52903986,37.727179527,0 -119.528632164,37.728209496,0 -119.526679516,37.729861736,0 -119.525864124,37.730226517,0 -119.524490833,37.730183601,0 -119.522902966,37.730677128,0 -119.520757198,37.731878757,0 -119.519684315,37.732758522,0 -119.519340992,37.733445168,0 -119.515285492,37.734453678,0 -119.514276981,37.735226154,0 -119.514641762,37.735462189,0 -119.514362812,37.735805511,0 -119.514920712,37.735826969,0 -119.514920712,37.736234665,0 -119.515156746,37.736299038,0 -119.513311386,37.740998268,0 -119.513053894,37.740569115,0 -119.512131214,37.740826607,0 -119.512474537,37.741105556,0 -119.510886669,37.741513252,0 -119.511680603,37.742199898,0 -119.512946606,37.742307186,0 -119.511723518,37.743015289,0 -119.512174129,37.742886543,0 -119.512367249,37.743251324,0 -119.513096809,37.7434659,0 -119.512345791,37.743852139,0 -119.512324333,37.744410038,0 -119.512689114,37.744860649,0 -119.512839317,37.746255398,0 -119.513354301,37.746706009,0 -119.513633251,37.749130726,0 -119.514513016,37.748808861,0 -119.513440132,37.749838829,0 -119.514791965,37.748057842,0 -119.514427185,37.748808861,0 -119.514834881,37.748744488,0 -119.514191151,37.749130726,0 -119.515328407,37.749946117,0 -119.514942169,37.751126289,0 -119.515199661,37.751641273,0 -119.518182278,37.752113342,0 -119.518976212,37.752649784,0 -119.520907402,37.752199173,0 -119.522066116,37.751641273,0 -119.522151947,37.751834393,0 -119.521594048,37.751469612,0 -119.521787167,37.751169205,0 -119.52129364,37.751104832,0 -119.521529675,37.750632763,0 -119.522666931,37.750117779,0 -119.52378273,37.750053406,0 -119.524512291,37.749474049,0 -119.526314735,37.749474049,0 -119.527215958,37.748765945,0 -119.527366161,37.748057842,0 -119.52755928,37.748229504,0 -119.528546333,37.747843266,0 -119.529469013,37.747242451,0 -119.529833794,37.746598721,0 -119.530284405,37.746534348,0 -119.532966614,37.745547295,0 -119.533524513,37.745912075,0 -119.533352852,37.745375633,0 -119.533696175,37.744624615,0 -119.534683228,37.743959427,0 -119.534962177,37.744216919,0 -119.533889294,37.744989395,0 -119.533524513,37.745933533,0 -119.53309536,37.745547295,0 -119.532001019,37.745847702,0 -119.530949593,37.746276855,0 -119.530863762,37.746534348,0 -119.529576302,37.746813297,0 -119.529469013,37.747242451,0 -119.528267384,37.747993469,0 -119.527387619,37.748143673,0 -119.52747345,37.748680115,0 -119.526786804,37.748916149,0 -119.526293278,37.749495506,0 -119.52434063,37.749538422,0 -119.523653984,37.750096321,0 -119.522988796,37.749989033,0 -119.521529675,37.750654221,0 -119.521358013,37.751040459,0 -119.521894455,37.751255035,0 -119.521722794,37.7515769,0 -119.521872997,37.751984596,0 -119.520456791,37.752327919,0 -119.519662857,37.752177715,0 -119.519319534,37.752370834,0 -119.519319534,37.752027512,0 -119.51843977,37.752199173,0 -119.51603651,37.751426697,0 -119.515650272,37.750439644,0 -119.515821934,37.748980522,0 -119.514491558,37.748637199,0 -119.514706135,37.748036385,0 -119.514942169,37.747993469,0 -119.514019489,37.747993469,0 -119.514234066,37.747735977,0 -119.513719082,37.747263908,0 -119.513525963,37.746255398,0 -119.512624741,37.744560242,0 -119.511766434,37.743573189,0 -119.512774944,37.743616104,0 -119.513010979,37.743294239,0 -119.512109756,37.743058205,0 -119.511659145,37.742350101,0 -119.512860775,37.742543221,0 -119.513096809,37.742199898,0 -119.511101246,37.741470337,0 -119.511444569,37.741062641,0 -119.512517452,37.740783691,0 -119.512195587,37.740590572,0 -119.513010979,37.740354538,0 -119.513375759,37.740569115,0 -119.515006542,37.740461826,0 -119.515178204,37.740097046,0 -119.514191151,37.737715244,0 -119.515049458,37.737071514,0 -119.514834881,37.735698223,0 -119.514405727,37.735462189,0 -119.514491558,37.73526907,0 -119.513676167,37.735290527,0 -119.514963627,37.73443222,0 -119.5190835,37.733337879,0 -119.519534111,37.732951641,0 -119.520843029,37.731750011,0 -119.522538185,37.730913162,0 -119.524919987,37.730033398,0 -119.526164532,37.730119228,0 -119.528975487,37.72788763,0 -119.528954029,37.727179527,0 -119.529533386,37.727029324,0 -119.530091286,37.726213932,0 -119.530498981,37.726492882,0 -119.530456066,37.72595644,0 -119.532408714,37.725226879,0 -119.532730579,37.724990845,0 -119.532558918,37.724862099,0 -119.533331394,37.724926472,0 -119.533267021,37.725141048,0 -119.532558918,37.725076675,0 -119.533567429,37.725162506,0 -119.533417225,37.725012302,0 -119.533309937,37.725334167,0 -119.532601833,37.724969387,0 -119.532687664,37.72475481,0 -119.533030987,37.724819183,0 -119.534511566,37.722845078,0 -119.535455704,37.72226572,0 -119.537966251,37.721772194,0 -119.539854527,37.72217989,0 -119.541378021,37.721986771,0 -119.54056263,37.722523212,0 -119.539661407,37.722716331,0 -119.540820122,37.722630501,0 -119.541828632,37.722501755,0 -119.544231892,37.723639011,0 -119.544403553,37.723853588,0 -119.543395042,37.723789215,0 -119.543931484,37.723853588,0 -119.54498291,37.724690437,0 -119.545326233,37.724626064,0 -119.545326233,37.724883556,0 -119.545004368,37.72503376,0 -119.545605183,37.72503376,0 -119.546377659,37.724561691,0 -119.547772408,37.723252773,0 -119.548416138,37.723574638,0 -119.549896717,37.72254467,0 -119.548931122,37.724003792,0 -119.548695087,37.724068165,0 -119.548437595,37.725291252,0 -119.549639225,37.724905014,0 -119.548716545,37.726171017,0 -119.549617767,37.725827694,0 -119.548780918,37.727093697,0 -119.550905228,37.726578712,0 -119.551634789,37.725892067,0 -119.551591873,37.726449966,0 -119.551634789,37.726020813,0 -119.553973675,37.726171017,0 -119.554789066,37.726471424,0 -119.555926323,37.726020813,0 -119.556634426,37.726385593,0 -119.557857513,37.726364136,0 -119.558801651,37.726814747,0 -119.558544159,37.727265358,0 -119.558222294,37.728316784,0 -119.558243752,37.730269432,0 -119.557986259,37.730569839,0 -119.558329582,37.731406689,0 -119.558136463,37.732586861,0 -119.559981823,37.732672691,0 -119.561183453,37.733037472,0 -119.561913013,37.733230591,0 -119.563758373,37.734475136,0 -119.564981461,37.73443222,0 -119.56618309,37.734882832,0 -119.566633701,37.734754086,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+		</Folder>
+	</Folder>
+</Document>
+</kml>
