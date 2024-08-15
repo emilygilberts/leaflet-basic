@@ -1,5 +1,6 @@
 <template>
   <div>
+    <input type="file" @change="handleFileUpload" accept=".kml" />
     <div id="map"></div>
   </div>
 </template>
@@ -10,34 +11,57 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css"; // Import Leaflet CSS
 import { kml } from "@tmcw/togeojson";
 
+let map;
 let layerControl;
 onMounted(() => {
   console.log("Initializing map...");
-  const map = setUpMap();
-  fetchAnddConvertLocalKMLToGeoJSON(map);
+  const map = initMap();
 });
 
-const fetchAnddConvertLocalKMLToGeoJSON = (map) => {
-  fetch("./half-dome.kml")
-    .then((response) => response.text())
-    .then((xml) => {
-      //convert xml to kml
-      const geojson = kml(new DOMParser().parseFromString(xml, "text/xml"));
-      console.log(geojson); // Log the converted GeoJSON
-      //create new overlay with geoJSON data
-      const geoJSONLayer = L.geoJSON(geojson);
-      //add the layer to the map directly
-      geoJSONLayer.addTo(map);
-      //add layer to layers control so that it can be toggled
-      layerControl.addOverlay(geoJSONLayer, "GeoJSON");
-      //add geojson layer to layercontrol
-    })
-    .catch((error) =>
-      console.error("Error fetching or processing KML file:", error)
-    );
+const handleFileUpload = (event) => {
+  console.log("Uploaded file..");
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const xml = e.target.result;
+      console.log("XML content:", xml);
+      const geojson = convertKMLToGeoJSON(xml);
+      console.log(geojson);
+      createGeoJSONLayerAndAddToMap(geojson);
+    };
+    reader.onerror = (error) => {
+      console.error("Error reading file:", error);
+    };
+    reader.readAsText(file);
+  }
 };
 
-const setUpMap = () => {
+const convertKMLToGeoJSON = (input) => {
+  const geojson = kml(new DOMParser().parseFromString(input, "text/xml"));
+  return geojson;
+};
+
+const createGeoJSONLayerAndAddToMap = (geojson) => {
+  if (map && layerControl) {
+    //create new overlay with geoJSON data
+    const geoJSONLayer = L.geoJSON(geojson);
+    //add the layer to the map directly
+    geoJSONLayer.addTo(map);
+    //add layer to layers control so that it can be toggled
+    layerControl.addOverlay(geoJSONLayer, "GeoJSON");
+    //center the added geojson layer data in the map for preview
+    const bounds = geoJSONLayer.getBounds();
+    if (bounds.isValid()) {
+      map.fitBounds(bounds);
+    }
+    //TODO: let user approve and persist to db
+  } else {
+    console.log("map or layeroncontrol is undefined");
+  }
+};
+
+const initMap = () => {
   var osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
     attribution: "© OpenStreetMap",
@@ -47,7 +71,7 @@ const setUpMap = () => {
     OpenStreetMap: osm,
   };
 
-  var map = L.map("map", {
+  map = L.map("map", {
     center: [39.73, -104.99],
     zoom: 10,
     layers: [osm],
