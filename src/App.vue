@@ -44,8 +44,8 @@ const convertKMLToGeoJSON = (input) => {
 
 const createGeoJSONLayerAndAddToMap = (geojson) => {
   if (map && layerControl) {
-    //create new overlay with geoJSON data
-    const geoJSONLayer = L.geoJSON(geojson);
+    //create new overlay with geoJSON data and add a popup to show the name of the feature
+    const geoJSONLayer = L.geoJSON(geojson, { onEachFeature: onEachFeature });
     //add the layer to the map directly
     geoJSONLayer.addTo(map);
     //add layer to layers control so that it can be toggled
@@ -58,6 +58,13 @@ const createGeoJSONLayerAndAddToMap = (geojson) => {
     //TODO: let user approve and persist to db
   } else {
     console.log("map or layeroncontrol is undefined");
+  }
+};
+
+const onEachFeature = (feature, layer) => {
+  //if the feature has a property 'name' bind a Popup that opens on click
+  if (feature.properties && feature.properties.name) {
+    layer.bindPopup(feature.properties.name);
   }
 };
 
